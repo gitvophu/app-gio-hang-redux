@@ -1,39 +1,39 @@
 const products = [
     {
         id:1,
-        name:"Galaxy Note 10+",
+        name:"Acer Aspire A515 53 5112 i5 8265U (NX.H6DSV.002)",
         price:1000,
-        image:"https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-silver-400x400.jpg"
+        image:"https://cdn.tgdd.vn/Products/Images/44/196906/hp-envy-13-ah1011tu-i5-8265u-8gb-256gb-win10-5hz2-3339-thumb-400x400.jpg"
     },
     {
         id:2,
-        name:"OPPO K3",
+        name:"HP Envy 13 ah1011TU i5 8265U (5HZ28PA)",
         price:1200,
-        image:'https://cdn.tgdd.vn/Products/Images/42/202863/oppo-k3-black-400x400.jpg'
+        image:'https://cdn.tgdd.vn/Products/Images/44/195381/hp-15-da0443tx-i3-7020u-4gb-1tb-mx110-win10-5sl06-avatar-1-400x400.jpg'
     },
     {
         id:3,
-        name:"Samsung Galaxy A80",
+        name:"SaHP Envy 14 ah1011TU i5 8265U (5HZ28PA)",
         price:300,
-        image:'https://cdn.tgdd.vn/Products/Images/42/201228/samsung-galaxy-a80-gold-400x400.jpg'
+        image:'https://cdn.tgdd.vn/Products/Images/44/195078/lenovo-ideapad-330s-14ikbr-i5-8250u-4gb-1tb-win10-33397-thumb-1-400x400.jpg'
     },
     {
         id:4,
-        name:"iPad Wifi 2018 32GB",
+        name:" i5 8265U (5HZ28PA)",
         price:500,
-        image:'https://cdn.tgdd.vn/Products/Images/522/163645/ipad-wifi-32gb-2018-thumb-33397-123-123321-600x600-400x400.jpg'
+        image:'https://cdn.tgdd.vn/Products/Images/44/190014/asus-x407ua-bv351t-400x400.jpg'
     },
     {
         id:5,
-        name:"Samsung Galaxy S10+ 128GB Bạc Đa Sắc",
+        name:"HP Envy 13(5HZ28PA)",
         price:500,
-        image:'https://cdn.tgdd.vn/Products/Images/42/203207/samsung-galaxy-s10-plus-128gb-bac-da-sac-400x400.jpg'
+        image:'https://cdn.tgdd.vn/Products/Images/44/204047/dell-inspiron-3580-i5-8265u-4gb-1tb-radeon-2gb-70-15-1-400x400.jpg'
     },
     {
         id:6,
         name:"iphone-xs-max",
         price:500,
-        image:'https://cdn.tgdd.vn/Products/Images/42/190321/iphone-xs-max-gold-400x400.jpg'
+        image:'https://cdn.tgdd.vn/Products/Images/44/200505/asus-x507ma-n4000-4gb-256gb-win10-br318t-8-400x400.jpg'
     },
     // https://cdn.tgdd.vn/Products/Images/42/190321/iphone-xs-max-gold-400x400.jpg
     //https://cdn.tgdd.vn/Products/Images/44/195078/lenovo-ideapad-330s-14ikbr-i5-8250u-4gb-1tb-win10-33397-thumb-1-400x400.jpg
