@@ -1,28 +1,41 @@
 import React from 'react';
 import CartItem from './CartItem';
-import propducts from './../data/products';
-
+import products from './../data/products';
+import * as actions from './../data/actions';
 import {connect} from 'react-redux';
 class Cart extends React.Component{
     
-
+    purchase = ()=>{
+        this.props.purchase();
+         var carts = this.props.carts;
+        var total_price = 0;
+     carts.forEach((element,index) => {
+            console.log(element);
+            for(var k in products)  {
+                if(products[k]['id'] === element['product_id']){
+                    total_price += products[k]['price']*element['soluong'];
+                }
+            }  
+        });
+        this.props.setMessage("Đã thanh toán toàn bộ giỏ hàng: $" + total_price);
+    }
     render(){
         var items = [];
         
         var carts = this.props.carts;
         var total_price = 0;
         for(var k in carts){
-            for(var i=0;i<propducts.length;i++){
-                if(propducts[i]['id'] === carts[k]['product_id']){
-                    total_price += propducts[i]['price']*carts[k]['soluong'];
+            for(var i=0;i<products.length;i++){
+                if(products[i]['id'] === carts[k]['product_id']){
+                    total_price += products[i]['price']*carts[k]['soluong'];
                     var carts_item = {
-                        id:propducts[i]['id'],
-                        price:propducts[i]['price'],
-                        name:propducts[i]['name'],
+                        id:products[i]['id'],
+                        price:products[i]['price'],
+                        name:products[i]['name'],
                         soluong:carts[k]['soluong'],
-                        image:propducts[i]['image'],
+                        image:products[i]['image'],
                     }
-                    items.push(<CartItem  key={propducts[i]['id']} carts_item={carts_item} subProduct={this.subProduct} addProduct={this.addProduct} removeProduct={this.removeProduct} />)
+                    items.push(<CartItem  key={products[i]['id']} carts_item={carts_item} subProduct={this.subProduct} addProduct={this.addProduct} removeProduct={this.removeProduct} />)
                 }
             }
         }
@@ -55,7 +68,7 @@ class Cart extends React.Component{
                                     </h4>
                                 </td>
                                 <td colSpan="3">
-                                    <button type="button" className="btn btn-primary waves-effect waves-light">Thanh toán
+                                    <button onClick={()=>{this.purchase()}} type="button" className="btn btn-primary waves-effect waves-light">Thanh toán
                                         <i className="fa fa-angle-right right"></i>
                                     </button>
                                 </td>
@@ -72,4 +85,15 @@ const mapStateToProps = (state)=>{
         carts:state.cartReducer
     }
 }
-export default connect(mapStateToProps,null)(Cart);
+
+const mapDispatchToProps = (dispatch, props)=>{
+    return {
+        purchase: ()=>{
+            dispatch(actions.purchase());
+        },
+        setMessage:(msg)=>{
+            dispatch(actions.setMessage(msg));
+        }
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Cart);

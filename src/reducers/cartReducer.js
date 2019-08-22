@@ -2,7 +2,6 @@
 
 import carts from './../data/carts';
 import * as actionTypes from './../data/actionTypes';
-
 const initialState = carts;
  
  const cartReducer = (state = initialState, action) => {
@@ -27,6 +26,8 @@ const initialState = carts;
      
     }
     if(action.type === actionTypes.ADD_PRODUCT){
+        console.log('add');
+    
         let product_id = action.product_id;
         for(let k in state){
             if(product_id === state[k]['product_id']){
@@ -65,7 +66,11 @@ const initialState = carts;
             
         return [...state];
     }
-   
+    if(action.type === actionTypes.PURCHASE){
+        
+        state = [];
+        return [...state];
+    }
     return [...state];
  }
 

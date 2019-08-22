@@ -32,3 +32,10 @@ export const setMessage = (msg) =>{
         msg:msg
     }
 }
+
+export const purchase = () =>{
+    return {
+        type:actionTypes.PURCHASE
+    }
+}
+
